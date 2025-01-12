@@ -1,0 +1,86 @@
+/* General styles */
+.menu {
+    background-color: #333;
+    color: #fff;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Desktop menu */
+.desktop-menu {
+    padding: 10px 20px;
+}
+.desktop-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.desktop-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.desktop-menu a:hover {
+    background-color: #555;
+}
+
+/* Mobile menu */
+.mobile-menu {
+    display: none;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.mobile-menu-items {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: 0.3s;
+    z-index: 99999;
+    width: 100%;
+}
+
+.mobile-menu-items a {
+    display: block;
+    padding: 10px 15px;
+    color: #fdff00;
+    text-decoration: none;
+    background-color: #3b3b3b;
+    border-top: 1px solid #ddd;
+}
+
+.mobile-menu-items a:hover {
+    background-color: #eee;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.mobile-menu-items.active {
+    display: block;
+}

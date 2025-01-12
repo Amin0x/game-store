@@ -9,11 +9,11 @@ const IndexPage = () => {
 
     const fetchData = async () => {
         try {
-            const childrenResponse = await fetch("https://api.example.com/children");
+            const childrenResponse = await fetch("http://localhost:8080/children");
             const childrenData = await childrenResponse.json();
             setChildren(childrenData);
 
-            const productsResponse = await fetch("https://api.example.com/products");
+            const productsResponse = await fetch("http://localhost:8080/products");
             const productsData = await productsResponse.json();
             setProducts(productsData);
         } catch (error) {
