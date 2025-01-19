@@ -12,15 +12,31 @@ const Menu = () => {
         <div>
             <div className="menu">
                 <nav className="desktop-menu">
-                    <div className="logo">
-                        <img src="logo.png" alt="الشعار" />
+                    <div class="desktop-menu-wrapper">
+                        <ul>
+                            <li><a href="#home">الرئيسية</a></li>
+                            <li><a href="#home">المنتجات</a></li>
+                            <li><a href="#home">العروض</a></li>
+                            <li><a href="#about">من نحن</a></li>
+                            <li><a href="#services">خدماتنا</a></li>
+                            <li><a href="#contact">اتصل بنا</a></li>
+                        </ul>
+                        <div className='am-dropdown'>
+                            <div className='am-dropdown-button'>كل المنتجات</div>
+                            <div className='am-dropdown-menu'>
+                                <ul>
+                                    <li><a href="">بلاي استيشن كونسول</a></li>
+                                    <li><a href="">العاب بلاي استيشن 5</a></li>
+                                    <li><a href="">العاب بلاي استيشن 4</a></li>
+                                    <li><a href="">كروت شحن الالعاب</a></li>
+                                    <li><a href="">كروت قوقل بلاي</a></li>
+                                    <li><a href="">كروت</a></li>
+                                    <li><a href="">اكس بوكس</a></li>
+                                    <li><a href="">العاب اكس بوكس</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <ul>
-                        <li><a href="#home">الرئيسية</a></li>
-                        <li><a href="#about">من نحن</a></li>
-                        <li><a href="#services">خدماتنا</a></li>
-                        <li><a href="#contact">اتصل بنا</a></li>
-                    </ul>
                 </nav>
                 <nav className="mobile-menu">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

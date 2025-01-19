@@ -1,0 +1,55 @@
+.am-header-container {
+    margin-bottom: 2rem;
+}
+
+.am-top-header {
+    background-color: #8BC34A;
+}
+
+.am-top-header button {
+    outline: none;
+    background-color: #558B2F;
+    color: #ffffff;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.am-logo .am-logo-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+}
+
+.am-header-container .am-mid-header {
+    padding: 29px 30px;
+}
+
+.am-header-container .am-mid-header.am-header .am-header-item.am-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+}
+
+.am-header-container .am-mid-header .am-header-item.am-search {
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+}
+
+.am-header-container .am-mid-header .am-header-item .btn:hover {
+    color: #fff;
+}
+
+.am-header-container .am-mid-header .am-header-item .input-text:focus {
+    box-shadow: 0px 0px 0px;
+    border-color: #f8c146;
+    outline: 0px;
+}
+
+.am-header-container .am-mid-header .am-header-item .form-control {
+    border: 1px solid #f8c146;
+}

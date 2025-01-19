@@ -1,13 +1,13 @@
 import ProductCard from "../comp/card";
-
+import './products-group.css'
 
 const ProductsGroup = ({ products }) => {
     return (
         <div className="container">
-            <div className="row">
+            <div className="products-group">
                 {products.map(product => (
-                    <div className="col-sm-6">
-                        <ProductCard product={product} />
+                    <div className="card-wrapper" key={product.id}>
+                        <ProductCard product={product}/>
                     </div>
                 ))} 
             </div>

@@ -1,33 +1,93 @@
 /* General styles */
 .menu {
-    background-color: #333;
     color: #fff;
+    background-color: #004D40;
 }
 
-.logo img {
+.menu,
+.logo img,
+.desktop-menu a{
     height: 50px;
 }
 
 /* Desktop menu */
 .desktop-menu {
-    padding: 10px 20px;
+    padding: 0;
 }
 .desktop-menu ul {
+    margin: 0;
     list-style: none;
     display: flex;
     gap: 15px;
 }
 
 .desktop-menu a {
+    display: inline-block;
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 0.9rem;
+    font-weight: 400;
     padding: 10px 15px;
-    border-radius: 5px;
 }
 
 .desktop-menu a:hover {
-    background-color: #555;
+    background-color: #010a4d;
+}
+.desktop-menu-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.desktop-menu-wrapper .am-dropdown {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    width: 184px;
+    line-height: 50px;
+    position: relative;
+    background-color: #7CB342;
+    cursor: pointer;
+}
+
+.am-dropdown-button{
+    display: block;
+}
+
+
+
+.desktop-menu-wrapper .am-dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    line-height: normal;
+    background-color: #003bcf;
+    z-index: 1;
+}
+
+.desktop-menu-wrapper .am-dropdown:hover .am-dropdown-menu {
+    display: block;
+}
+
+.desktop-menu-wrapper .am-dropdown-menu ul {
+    padding: 0;
+    margin: 0;
+    display: block;
+    background-color: #003bcf;
+}
+
+.desktop-menu-wrapper .am-dropdown-menu ul li {
+    display: block;
+    padding: 0;
+    margin: 0;
+    background-color: #003bcf;
+}
+
+.desktop-menu-wrapper .am-dropdown-menu ul li a{
+    display: block;
+    outline: none;
 }
 
 /* Mobile menu */

@@ -1,0 +1,32 @@
+.products-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card-wrapper {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+@media screen and (min-width: 688px) and (max-width: 987px) {
+    .card-wrapper {
+        flex: 0 0 auto;
+        width: 49.5%;
+    }
+}
+
+@media  screen and (min-width: 988px) and (max-width: 1122px) {
+    .card-wrapper {
+        flex: 0 0 auto;
+        width: 33%;
+    }
+}
+
+@media  screen and (min-width: 1122px) {
+    .card-wrapper {
+        flex: 0 0 auto;
+        width: 24.6%;
+    }
+}

@@ -1,4 +1,7 @@
 package com.amin.gamestore.data;
 
-public enum Brands {
+public class Brands {
+    public String GOOGLE = "Google";
+    public String ITUNE = "ITune";
+    public String SHAHED = "Shahed";
 }

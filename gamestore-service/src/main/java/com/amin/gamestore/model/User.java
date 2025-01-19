@@ -1,11 +1,24 @@
 package com.amin.gamestore.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+import java.util.Date;
+
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String username;
     private String password;
-    private String email;
+    private String phone;
     private String role;
     private boolean enabled;
+    private Date createdAt;
+    private Date updatedAt;
 
     public User() {
     }
@@ -13,9 +26,34 @@ public class User {
     public User(String username, String password, String email, String role, boolean enabled) {
         this.username = username;
         this.password = password;
-        this.email = email;
+        this.phone = email;
         this.role = role;
         this.enabled = enabled;
+
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -34,12 +72,12 @@ public class User {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getRole() {
@@ -62,7 +100,7 @@ public class User {
         return "User{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
+                ", email='" + phone + '\'' +
                 ", role='" + role + '\'' +
                 ", enabled=" + enabled +
                 '}';

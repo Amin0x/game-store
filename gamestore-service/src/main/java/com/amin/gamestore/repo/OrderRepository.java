@@ -1,4 +1,7 @@
 package com.amin.gamestore.repo;
 
-public interface OrderRepository {
+import com.amin.gamestore.model.Order;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OrderRepository extends JpaRepository<Order, Long> {
 }

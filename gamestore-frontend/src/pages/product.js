@@ -1,8 +1,4 @@
-
-
-
-
-
+import './product.css'
 
 const ProductPage = () => {
 
