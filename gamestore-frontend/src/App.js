@@ -3,7 +3,7 @@ import './App.css';
 import Footer from './comp/footer';
 import Header from './comp/Header';
 import IndexPage from './pages';
-import ProductPage from './pages/product';
+import ProductPage from './pages/ProductPage';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Menu from "./comp/menu";
 import "slick-carousel/slick/slick.css";

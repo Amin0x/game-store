@@ -3,20 +3,11 @@ package com.amin.gamestore.controller;
 import com.amin.gamestore.dto.CategoryForm;
 import com.amin.gamestore.model.Category;
 import com.amin.gamestore.repo.CategoryRepository;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 public class CategoryController {
@@ -74,11 +65,5 @@ public class CategoryController {
         category1.setUpdatedAt(LocalDateTime.now());
         return categoryRepository.save(category1);
     }
-
-    private void getBrand(String brand) {
-        if (brand.isEmpty())
-            return;
-    }
-
 
 }
