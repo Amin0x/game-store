@@ -22,7 +22,7 @@ const Header = ({cartInfo, userInfo}) => {
                                     <div class="input-group">
                                         <input type="text" class="form-control input-text" placeholder="Search products...." aria-label="Recipient's username" aria-describedby="basic-addon2" />
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-warning btn-lg" type="button"><FontAwesomeIcon icon={["far", "search"]}></FontAwesomeIcon></button>
+                                            <button class="btn btn-outline-warning btn-lg" type="button"><FontAwesomeIcon icon={["fas", "search"]}></FontAwesomeIcon></button>
                                         </div>
                                     </div>
                                 </div>

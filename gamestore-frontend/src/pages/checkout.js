@@ -3,7 +3,7 @@ import './checkout.css'
 const CheckoutPage = ({ cart }) => {
     return (
 
-        <div class='checkout-containers'>
+        <div class='checkout-containers am-container'>
             <div class='window'>
                 <div class='order-info'>
                     <div class='order-info-content'>

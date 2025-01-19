@@ -3,7 +3,6 @@ package com.amin.gamestore.controller;
 import com.amin.gamestore.dto.ProductForm;
 import com.amin.gamestore.model.Product;
 import com.amin.gamestore.service.ProductService;
-import jakarta.persistence.GeneratedValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,12 +33,12 @@ public class ProductController {
 
     @GetMapping("/products/{id}")
     public Product getProductById(@PathVariable Long id) {
-        return productService.getProductById(id);
+        return productService.getProduct(id).orElseThrow();
     }
 
     @PutMapping("/products/{id}")
     public void updateProduct(@ModelAttribute ProductForm productForm, @PathVariable Long id){
-        Product product = productService.getProductById(id);
+        Product product = productService.getProduct(id).orElseThrow();
         product.setBrand(productForm.getBrand());
         product.setName(productForm.getName());
         product.setCategory(productForm.getCategory());

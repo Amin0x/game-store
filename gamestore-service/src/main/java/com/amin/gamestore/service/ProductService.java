@@ -5,6 +5,8 @@ import com.amin.gamestore.repo.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class ProductService {
 
@@ -12,6 +14,9 @@ public class ProductService {
     private ProductRepository productRepository;
 
     public Product saveProduct(Product product) {
+        if (product == null)
+            throw new RuntimeException("product is null");
+
         return productRepository.save(product);
     }
 
@@ -19,10 +24,10 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public Product getProductById(Long id) {
-        if(id == null) {
-            return null;
-        }
-        return productRepository.findById(id).orElse(null);
+    public Optional<Product> getProduct(Long id) {
+        if (id == null)
+            throw new RuntimeException("id is null");
+
+        return productRepository.findById(id);
     }
 }

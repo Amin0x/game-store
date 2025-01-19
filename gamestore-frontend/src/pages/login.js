@@ -3,7 +3,7 @@ import './login.css';
 
 const LoginPage = () => {
     return (
-        <div className="login-dark">
+        <div className="login-dark am-container">
             <form method="post">
                 <h2 className="sr-only">تسجيل الدخول</h2>
                 <div className="illustration"><i className="icon ion-ios-locked-outline"></i></div>

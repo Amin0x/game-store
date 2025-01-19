@@ -60,7 +60,7 @@ const IndexPage = () => {
     }, []);
 
     return (
-        <div>
+        <div className="am-container">
             <div>
                 <Slider {...settings}>
                     <div>

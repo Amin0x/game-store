@@ -2,15 +2,15 @@ package com.amin.gamestore.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class CategoryDto {
+public class CategoryForm {
 
     private String name;
     private MultipartFile image;
 
-    public CategoryDto() {
+    public CategoryForm() {
     }
 
-    public CategoryDto(String name, MultipartFile file) {
+    public CategoryForm(String name, MultipartFile file) {
         this.name = name;
         this.image = file;
     }

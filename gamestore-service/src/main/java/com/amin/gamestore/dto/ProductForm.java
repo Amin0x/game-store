@@ -8,6 +8,7 @@ public class ProductForm {
     private String category;
     private String brand;
     private Double price;
+    private Double pricePre;
     private MultipartFile imageUrl;
 
     public ProductForm() {
@@ -51,5 +52,21 @@ public class ProductForm {
 
     public void setImageUrl(MultipartFile imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getNameAr() {
+        return nameAr;
+    }
+
+    public void setNameAr(String nameAr) {
+        this.nameAr = nameAr;
+    }
+
+    public Double getPricePre() {
+        return pricePre;
+    }
+
+    public void setPricePre(Double pricePre) {
+        this.pricePre = pricePre;
     }
 }

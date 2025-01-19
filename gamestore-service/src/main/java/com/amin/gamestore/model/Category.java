@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -13,16 +14,16 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Date createdAt;
-    private Date updatedAt;
+    private String image;
+    private String brand;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     public Category() {
-        this.createdAt = new Date();
-        this.updatedAt = new Date();
+
     }
 
     public Category(String name) {
-        this();
         this.name = name;
     }
 
@@ -42,19 +43,35 @@ public class Category {
         this.name = name;
     }
 
-    public Date getCreatedAt() {
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

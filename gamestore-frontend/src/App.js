@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import CreateProductPage from "./admin/CreateProductPage";
 import CheckoutPage from "./pages/checkout";
 import CategoryPage from "./pages/category";
+import ProductViewPage from "./pages/ProductViewPage.js";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/admin/product/create" element={<CreateProductPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/category" element={<CategoryPage />} />
+          <Route path="/item/{slug}" element={<ProductViewPage/>} />
         </Routes>
       </BrowserRouter>
       <Footer />

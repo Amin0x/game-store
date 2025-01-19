@@ -1,7 +1,7 @@
 
 const Error404 = () => {
     return (
-        <div>
+        <div className="am-container">
             <div class="lock"></div>
             <div class="message">
                 <h1>الوصول إلى هذه الصفحة مقيد</h1>
