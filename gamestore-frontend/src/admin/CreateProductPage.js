@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import './CreateProductPage.css'
+import { useForm } from 'react-hook-form';
+import './css.css'
 
 const CreateProductPage = () => {
+    
     const [product, setProduct] = useState({
         name: '',
         description: '',
@@ -10,94 +12,120 @@ const CreateProductPage = () => {
         imageUrl: ''
     });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setProduct({
-            ...product,
-            [name]: value
-        });
-    };
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const uploadFile = async (file) => {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        console.log('Uploading file:', file);
+        
+        try {
+            const response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+            
+            if (response.ok) {
+                const data = await response.json();
+                return data.url; // Assuming server returns URL of uploaded file
+            } else {
+                throw new Error('File upload failed');
+            }
+        } catch (error) {
+            console.error('Error uploading file:', error);
+            return null;
+        }
+    }
+
+    const onFileChange = (e) => {
+        console.log('File selected:', e.target.files[0]);
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setProduct(prev => ({
+                    ...prev,
+                    imageUrl: reader.result
+                }));
+            };
+            
+            reader.readAsDataURL(file);
+        }
+    }
+
+    const onSubmit = async (data) => {
+        
         const res = await fetch("/products", {
             method: "post",
             headers: {"Content-type": "application/json"},
-            body: product,
+            body: JSON.stringify(data),
         });        
 
         if (res.ok === true){
             const result = await res.json();
             console.log('form submit result is:', result);
         }
-
-        console.log('Product submitted:', product);
     };
 
     return (
         <div className='create-product'>
             <h1 className='title'>Create Product</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='form-grp'>
                     <label>Name:</label>
                     <input
                         className='input'
                         type="text"
-                        name="name"
-                        value={product.name}
-                        onChange={handleChange}
-                        required
+                        {...register("name", { required: true })}
                     />
+                    {errors.name && <span>This field is required</span>}
                 </div>
                 <div className='form-grp'>
                     <label>Name in arabic:</label>
                     <input
                         className='input'
                         type="text"
-                        name="nameAr"
-                        value={product.nameAr}
-                        onChange={handleChange}
-                        required
+                        {...register("nameAr", { required: true })}
                     />
+                    {errors.nameAr && <span>This field is required</span>}
                 </div>
-                {/* <div className='form-grp'>
-                    <label>Description:</label>
-                    <textarea
-                        name="description"
-                        value={product.description}
-                        onChange={handleChange}
-                        required
-                    />
-                </div> */}
                 <div className='form-grp'>
                     <label>Price:</label>
                     <input
                         type="number"
-                        name="price"
-                        value={product.price}
-                        onChange={handleChange}
-                        required
+                        {...register("price", { required: true })}
                     />
+                    {errors.price && <span>This field is required</span>}
                 </div>
-                <div className='form-grp'>
+                <div className='form-group'>
                     <label>Category:</label>
                     <input
                         type="text"
-                        name="category"
-                        value={product.category}
-                        onChange={handleChange}
-                        required
+                        {...register("category", { required: true })}
                     />
+                    {errors.category && <span>This field is required</span>}
                 </div>
                 <div className='form-grp'>
                     <label>Image URL:</label>
                     <input
                         type="text"
-                        name="imageUrl"
-                        value={product.imageUrl}
-                        onChange={handleChange}
-                        required
+                        {...register("imageUrl", { required: true })}
                     />
+                    {errors.imageUrl && <span>This field is required</span>}
+                </div>
+                <div className='form-grp'>
+                    <input {...register("file", {onChange:onFileChange})}
+                        type="file"
+                        id="fileInput"
+                        style={{ display: 'none' }}                        
+                    />
+                    <button 
+                        type="button" 
+                        onClick={() => document.getElementById('fileInput').click()}
+                    >
+                        Upload Image
+                    </button>
                 </div>
                 <button type="submit">Create Product</button>
             </form>

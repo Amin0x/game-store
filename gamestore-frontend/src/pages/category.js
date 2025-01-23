@@ -1,6 +1,8 @@
 import React from 'react';
 import './category.css'
 import { useEffect, useState } from 'react';
+import Card2 from '../comp/card2';
+import Spotfy from'../imgs/e6ed63d11bca412cc690c021bb0559c1.jpg'
 
 const CategoryPage = () => {
     
@@ -31,30 +33,22 @@ const CategoryPage = () => {
 
 
     return (
-        <div>
-            {
-                categoryCards.map((card) => {
-                    return (
-                        <div>{card.name}</div>
-                    )
-                })
-            }
-
-            {
-                categoryItune.map((itune) => {
-                    return (
-                        <div>{itune.name}</div>
-                    )
-                })
-            }
-
-            {
-                categoryPSG.map((psg) => {
-                    return (
-                        <div>{psg.name}</div>
-                    )
-                })
-            }
+        <div className='categories-wrapper'>
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
+           <Card2 img={Spotfy} titlt={"اشتراك 6 اشهر مميز"} />
         </div>
     );
 };

@@ -18,7 +18,7 @@ public class UserController {
     @PostMapping("/users")
     public ResponseEntity<Object> createUser(@RequestBody User user) {
         if (user == null)
-            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("null user not allowed", HttpStatus.BAD_REQUEST);
 
         User newUser = new User();
         newUser.setUsername(user.getUsername());
@@ -34,7 +34,7 @@ public class UserController {
     @PutMapping("/users/{id}")
     public ResponseEntity<Object> updateUser(@ModelAttribute User user, @PathVariable Long id){
         if (user == null)
-            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("null user not allowed", HttpStatus.BAD_REQUEST);
 
         User curUser = userRepository.findById(id).orElseThrow();
         curUser.setPhone(user.getPhone());

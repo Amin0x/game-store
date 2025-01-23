@@ -43,8 +43,6 @@ public class CategoryController {
         return categories;
     }
 
-
-
     @PostMapping("/category")
     public Category createCategory(@ModelAttribute CategoryForm category) {
         Category category1 = new Category();

@@ -1,0 +1,57 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+$primary: #3e3e3e;
+$secoundry: #191919;
+$success: green;
+$info: cyan;
+$warning: yellow;
+$danger: red;
+$light: #ccc;
+$dark: #000;
+
+$border-style: solid;
+$border-color: #ccc;
+$border-color-translucent: rgba(#000, .175);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+.content-wrapper{
+    padding: 0;
+    margin: 0;
+}
+
+.produst-view-wrapper {
+    background-color: black;
+
+    .description {
+        padding: 30px;
+        color: #fff;
+    }
+
+    .video-section {
+        padding: 30px;
+        color: #fff;
+
+        h2 {
+            margin-bottom: 15px;
+        }
+    }
+
+    .glass-card {
+        width: 200px;
+        padding: 30px;
+        text-align: center;
+        /* From https://css.glass */
+        color: #fff;
+        background: rgba(255, 255, 255, 0.16);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3.7px);
+        -webkit-backdrop-filter: blur(3.7px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+}

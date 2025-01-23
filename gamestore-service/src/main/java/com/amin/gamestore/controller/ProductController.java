@@ -31,9 +31,14 @@ public class ProductController {
         return productService.getProducts();
     }
 
+    @GetMapping("/api/products/best-sales")
+    public Iterable<Product> getBestSalesProducts() {
+        return productService.getProducts();
+    }
+
     @GetMapping("/products/{id}")
     public Product getProductById(@PathVariable Long id) {
-        return productService.getProduct(id).orElseThrow();
+        return productService.getProduct(id).orElseThrow(()-> new RuntimeException("Resource not found"));
     }
 
     @PutMapping("/products/{id}")

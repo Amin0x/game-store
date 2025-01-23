@@ -11,7 +11,7 @@ const Footer = () => {
           <p>سوق العليا</p>
           <p>الرياض</p>
           <p>المملكة العربية السعودية</p>
-          <p><i className="fa fa-phone" aria-hidden="true"></i> هاتف: <strong>+91-9122588799</strong></p>
+          <p><i className="fa fa-phone" aria-hidden="true"></i> هاتف: <strong dir='ltr'>+249 123456789</strong></p>
         </div>
 
         <div className="am-link-section">
@@ -38,7 +38,7 @@ const Footer = () => {
           <div className='desc mb-3'>ادخل بريدك لتصلك اخر الاخبار</div>
           <div className="search">
             <i className="fa fa-search"></i>
-            <input type="text" className="form-control" placeholder="Have a question? Ask Now" />
+            <input type="text" className="form-control" placeholder="البريد الالكتروني" />
             <button className="btn btn-primary">اشترك</button>
           </div>
         </div>
@@ -50,7 +50,7 @@ const Footer = () => {
           <div className="row">
 
             <div className="col-md-3">
-              <div className="footer-site-info">2020 © <a href="https://www.youtube.com/watch?v=pdr4IzBpacI&t=34s" target="_blank">أفضل برنامج HTML و CSS </a></div>
+              <div className="footer-site-info">2025 © <a href="#" target="_blank">Amin Omer</a></div>
             </div>
 
             <div className="col-md-6">

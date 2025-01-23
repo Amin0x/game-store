@@ -14,10 +14,15 @@ public class Product {
     private Long id;
     private String slug;
     private String name;
+    private String description;
     private String category;
     private String brand;
     private Double price;
     private String imageUrl;
+    private String flag;
+    private Integer sold;
+    private Integer stock;
+    private Integer view;
     private Date createdAt;
     private Date updatedAt;
 
@@ -108,5 +113,45 @@ public class Product {
 
     public void setSlug(String slug) {
         this.slug = slug;
+    }
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getSold() {
+        return sold;
+    }
+
+    public void setSold(Integer sold) {
+        this.sold = sold;
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
+
+    public Integer getView() {
+        return view;
+    }
+
+    public void setView(Integer view) {
+        this.view = view;
     }
 }

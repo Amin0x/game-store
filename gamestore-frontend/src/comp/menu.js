@@ -15,14 +15,15 @@ const Menu = () => {
                     <div class="desktop-menu-wrapper">
                         <ul>
                             <li><a href="#home">الرئيسية</a></li>
-                            <li><a href="#home">المنتجات</a></li>
-                            <li><a href="#home">العروض</a></li>
-                            <li><a href="#about">من نحن</a></li>
-                            <li><a href="#services">خدماتنا</a></li>
-                            <li><a href="#contact">اتصل بنا</a></li>
+                            <li><a href="#home">الأكثر مبيعا</a></li>
+                            <li><a href="#home">الكروت</a></li>
+                            <li><a href="#about">الالعاب</a></li>
+                            <li><a href="#services">البرامج</a></li>
+                            <li><a href="#services">التلفزيون</a></li>
+                            <li><a href="#contact">الاجهزة</a></li>
                         </ul>
                         <div className='am-dropdown'>
-                            <div className='am-dropdown-button'>كل المنتجات</div>
+                            <div className='am-dropdown-button'>كل الاقسام</div>
                             <div className='am-dropdown-menu'>
                                 <ul>
                                     <li><a href="">بلاي استيشن كونسول</a></li>

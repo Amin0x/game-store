@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface OrderItemRepo extends JpaRepository<Long, OrderItem> {
+public interface OrderItemRepo extends JpaRepository<OrderItem, Long> {
     List<OrderItem> findByOrderId(Long orderId);
 }

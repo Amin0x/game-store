@@ -1,10 +1,7 @@
 package com.amin.gamestore.controller;
 
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -12,13 +9,19 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
 public class FileController {
 
-    public void uploadFile(@RequestBody MultipartFile file){
+    @PostMapping("/upload")
+    public Map<String, String> uploadFile(@RequestBody MultipartFile file){
         String name = saveFile(file);
+        Map<String, String> res = new HashMap<>();
+        res.put("url", name);
+        return res;
     }
 
     @GetMapping("/images/{name}")

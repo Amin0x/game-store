@@ -1,11 +1,13 @@
 import './checkout.css'
+import MasImage from '../imgs/mastercard_PNG16.png'
+import MadaImage from '../imgs/mada-logo-323EDA7CC6-seeklogo.com.png'
 
 const CheckoutPage = ({ cart }) => {
     return (
 
         <div class='checkout-containers am-container'>
-            <div class='window'>
-                <div class='order-info'>
+            <div className='order-info-wrapper'>
+            <div class='order-info'>
                     <div class='order-info-content'>
                         <h4>ملخص الطلب</h4>
                         <div class='line'></div>
@@ -69,6 +71,9 @@ const CheckoutPage = ({ cart }) => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class='window'>
+                
                 <div className="address-info">
                     <h4>العنوان</h4>
                     <p>جميع الحقول مطلوبة</p>
@@ -129,18 +134,22 @@ const CheckoutPage = ({ cart }) => {
                                 </div>
                             </div>
                         </div>
-                        <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='80' class='credit-card-image' id='credit-card-image' alt=""></img>
+                       <div className='pay-method-logos'>
+                       <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='80' id='credit-card-image' alt=""></img>
+                        <img src={MasImage} alt='' />
+                        <img src={MadaImage} alt='' />
+                       </div>
                         <div class="card-number form-row">
-                            <lable clabel-field>Card Number</lable>
+                            <lable clabel-field>رقم البطاقة</lable>
                             <input class='input-field'></input>
                         </div>
                         <div class="card-holder form-row">
-                            <lable class="label-field">Card Holder</lable>
+                            <lable class="label-field">اسم حامل البطاقة</lable>
                             <input class='input-field'></input>
                         </div>
                         <div class='half-input-table'>
                             <div class="expire form-row">
-                                <lable class="label-field">Expires</lable>
+                                <lable class="label-field">تاريخ الانتهاء</lable>
                                 <input class='input-field'></input>
                             </div>
                             <div class="cvc form-row">
