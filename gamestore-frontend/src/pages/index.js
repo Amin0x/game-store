@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import LayoutCard from "../comp/layout-card";
 import ProductsGroup from "../comp/prodcts-group";
-import Slider from "react-slick";
 import './index.css'
 import Card1 from "../comp/card1";
 import Card2 from "../comp/card2";

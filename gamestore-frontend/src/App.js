@@ -12,26 +12,40 @@ import CheckoutPage from "./pages/checkout";
 import CategoryPage from "./pages/category";
 import ProductViewPage from "./pages/ProductViewPage.js";
 import Error404 from "./pages/error404.js";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import ListProductPage from "./admin/ListProductPage.js";
+import ListCategoryPage from "./admin/ListCategoryPage.js";
+import EditCategory from "./admin/EditCategory.js";
+import CreateCategoryPage from "./admin/CreateCategoryPage.js";
+import CreateBrand from "./admin/CreateBrand.js";
+import EditProductPage from "./admin/EditProductPage.js";
+import EditBrand from "./admin/EditBrand.js";
+import ListBrand from "./admin/ListBrand.js";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<IndexPage />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/bestsale" element={<BestSalePage />} />
-          <Route path="/admin/products/create" element={<CreateProductPage />} />
+          <Route path="/admin/products/add" element={<CreateProductPage />} />
+          <Route path="/admin/products" element={<ListProductPage />} />
+          <Route path="/admin/products/edit/:id" element={<EditProductPage />} />
+          <Route path="/admin/category/create" element={<CreateCategoryPage />} />
+          <Route path="/admin/category" element={<ListCategoryPage />} />
+          <Route path="/admin/category/edit/:id" element={<EditCategory />} />
+          <Route path="/admin/brands/create" element={<CreateBrand />} />
+          <Route path="/admin/brands/edit/:id" element={<EditBrand />} />
+          <Route path="/admin/brands" element={<ListBrand />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/category" element={<CategoryPage />} />
           <Route path="/item/:slug" element={<ProductViewPage/>}/>
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
+     
     </div >
   );
 }

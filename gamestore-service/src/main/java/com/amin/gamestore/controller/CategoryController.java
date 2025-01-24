@@ -15,6 +15,11 @@ public class CategoryController {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @GetMapping("/category/{id}")
+    public Category getCategories(@PathVariable Long id){
+        return  categoryRepository.findById(id).orElseThrow();
+    }
+
     @GetMapping("/category")
     public List<Category> getCategories(
             @RequestParam(defaultValue = "") String brand,
@@ -56,10 +61,13 @@ public class CategoryController {
     }
 
     @PutMapping("/category/{id}")
-    public Category updateCategory(@PathVariable Long id, @RequestBody Category category) {
+    public Category updateCategory(@RequestBody Category category, @PathVariable Long id) {
+        System.out.println("category is: " + category);
+        System.out.println("category id is: " + id);
         Category category1 = categoryRepository.findById(id).orElseThrow();
         category1.setName(category.getName());
         category1.setBrand(category.getBrand());
+        category1.setNameAr(category.getNameAr());
         category1.setUpdatedAt(LocalDateTime.now());
         return categoryRepository.save(category1);
     }

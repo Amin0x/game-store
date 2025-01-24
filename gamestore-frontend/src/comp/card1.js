@@ -1,12 +1,11 @@
 import React from 'react';
 import './card1.css';
-import { height } from '@fortawesome/free-regular-svg-icons/faAddressBook';
 
 const Card1 = ({ img, name, price }) => {
     return (
         <div className="card1">
             <div className="card1-content">
-                <img src={img} alt="Card 1 Image" className="card1-image" />
+                <img src={img} alt="Image" className="card1-image" />
                 <div className='card1-bottom'>
                     <p className="card1-title">{name}</p>
                     <div className='card1-flags-price'>

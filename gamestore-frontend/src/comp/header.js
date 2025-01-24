@@ -1,7 +1,6 @@
 import React from 'react';
 import './Header.css';
 import logo from './16788282.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Menu from './menu';
 
 const Header = ({ cartInfo, userInfo }) => {

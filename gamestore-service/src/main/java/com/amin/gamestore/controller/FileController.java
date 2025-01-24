@@ -18,9 +18,13 @@ public class FileController {
 
     @PostMapping("/upload")
     public Map<String, String> uploadFile(@RequestBody MultipartFile file){
+        if(file.getSize() > 5000 * 1024)
+            throw new RuntimeException("file size exceed allowed size");
+
         String name = saveFile(file);
         Map<String, String> res = new HashMap<>();
-        res.put("url", name);
+        res.put("url",  name);
+        System.out.println("File name: " + name);
         return res;
     }
 
