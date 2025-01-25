@@ -39,19 +39,19 @@ const Sidebar = () => {
                 <Link to="/admin/server">
                     <FaServer /> السيرفر
                 </Link>
-                <Link to="javascript:void(0)">
+                <Link to="#">
                     <FaUser class="fa fa-user-o" aria-hidden="true"></FaUser>
                     المستخدمين
                 </Link>
-                <Link to="javascript:void(0)">
+                <Link to="#">
                     <i class="fa fa-laptop" aria-hidden="true"></i>
                     الاعلانات
                 </Link>
-                <Link to="javascript:void(0)">
+                <Link to="#">
                     <i class="fa fa-clone" aria-hidden="true"></i>
                     العروض
                 </Link>
-                <Link to="javascript:void(0)">
+                <Link to="#">
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                     سلة المهملات
                 </Link>

@@ -1,8 +1,4 @@
 import React from "react";
-import './App.css';
-import './Style.css'
-import Footer from './comp/footer';
-import Header from './comp/Header';
 import IndexPage from './pages';
 import ProductPage from './pages/ProductPage';
 import BestSalePage from './pages/BestSalePage'
@@ -20,6 +16,8 @@ import CreateBrand from "./admin/CreateBrand.js";
 import EditProductPage from "./admin/EditProductPage.js";
 import EditBrand from "./admin/EditBrand.js";
 import ListBrand from "./admin/ListBrand.js";
+import './App.css';
+import './Style.css';
 
 function App() {
   return (
